@@ -22,45 +22,24 @@
   </section>
 
   <section class="productos" id="productos">
-
-    <div class="producto">
-      <img src="Fotos/1.png" alt="Camiseta Negra">
-      <div class="producto-info">
-        <h3>Camiseta Negra</h3>
-        <p>Estilo moderno y cómodo.</p>
-        <span>$25.00</span>
-      </div>
+    <!-- 🧥 Productos del 1 al 21 -->
+    <div class="grid-productos">
+      <!-- Generados automáticamente -->
+      <script>
+        for (let i = 1; i <= 21; i++) {
+          document.write(`
+            <div class="producto">
+              <img src="Fotos/${i}.png" alt="Producto ${i}" onclick="abrirImagen(this)">
+              <div class="producto-info">
+                <h3>Producto ${i}</h3>
+                <p>Moda exclusiva ShoppingVIP</p>
+                <span>$${(Math.random() * 70 + 20).toFixed(2)}</span>
+              </div>
+            </div>
+          `);
+        }
+      </script>
     </div>
-
-    <div class="producto">
-      <img src="Fotos/2.png" alt="Chaqueta Elegante">
-      <div class="producto-info">
-        <h3>Chaqueta Elegante</h3>
-        <p>Diseño sofisticado para toda ocasión.</p>
-        <span>$50.00</span>
-      </div>
-    </div>
-
-    <div class="producto">
-      <img src="Fotos/3.png" alt="Pantalón Jeans">
-      <div class="producto-info">
-        <h3>Pantalón Jeans</h3>
-        <p>Perfecto para el día a día.</p>
-        <span>$40.00</span>
-      </div>
-    </div>
-
-    <div class="producto">
-      <img src="Fotos/4.png" alt="Sudadera Blanca">
-      <div class="producto-info">
-        <h3>Sudadera Blanca</h3>
-        <p>Confort y estilo urbano.</p>
-        <span>$35.00</span>
-      </div>
-    </div>
-
-    <!-- 👇 Puedes seguir agregando más productos aquí -->
-    
   </section>
 
   <footer>
@@ -70,9 +49,9 @@
   <!-- Botón flotante de WhatsApp -->
   <a href="https://wa.me/5350775203" class="whatsapp-float" target="_blank" title="Escríbenos por WhatsApp">💬</a>
 
-  <!-- Ventana modal para imagen ampliada -->
+  <!-- Modal para ampliar imágenes -->
   <div id="imagenModal" class="modal">
-    <span class="cerrar">&times;</span>
+    <span class="cerrar" onclick="cerrarImagen()">&times;</span>
     <img class="modal-contenido" id="imagenAmpliada">
   </div>
 
