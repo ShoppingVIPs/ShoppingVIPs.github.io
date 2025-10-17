@@ -1,4 +1,3 @@
-/* Estilo general */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -55,19 +54,44 @@ nav a {
   overflow: hidden;
   transition: transform 0.2s ease;
   cursor: pointer;
+  position: relative;
 }
 
 .producto:hover {
   transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,123,255,0.25);
 }
 
 .producto img {
   width: 100%;
   height: 200px;
-  object-fit: cover; /* ✅ Ajusta la imagen sin deformarla */
+  object-fit: cover;
   display: block;
+  transition: transform 0.3s ease;
 }
 
+.producto:hover img {
+  transform: scale(1.05);
+}
+
+/* Texto “toca para ampliar” */
+.texto-ampliar {
+  text-align: center;
+  font-size: 0.85em;
+  color: #007bff;
+  font-weight: 500;
+  padding: 6px;
+  border-top: 1px solid #eee;
+  background-color: #f9fbff;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.producto:hover .texto-ampliar {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Info del producto */
 .producto-info {
   padding: 10px;
   text-align: center;
@@ -130,6 +154,7 @@ footer {
   max-width: 90%;
   max-height: 90%;
   border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 
 .cerrar {
@@ -144,10 +169,14 @@ footer {
 /* Responsive */
 @media (max-width: 600px) {
   .grid-productos {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .producto img {
-    height: 160px;
+    height: 200px;
+  }
+
+  .texto-ampliar {
+    font-size: 0.9em;
   }
 }
