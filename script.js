@@ -1,19 +1,18 @@
-const imagenes = document.querySelectorAll('.producto img');
-const modal = document.getElementById('imagenModal');
-const imagenAmpliada = document.getElementById('imagenAmpliada');
-const cerrar = document.querySelector('.cerrar');
+// Abrir imagen ampliada
+function abrirImagen(img) {
+  const modal = document.getElementById("imagenModal");
+  const imagenAmpliada = document.getElementById("imagenAmpliada");
+  imagenAmpliada.src = img.src;
+  modal.style.display = "flex";
+}
 
-imagenes.forEach(img => {
-  img.addEventListener('click', () => {
-    modal.style.display = 'flex';
-    imagenAmpliada.src = img.src;
-  });
-});
+// Cerrar modal
+function cerrarImagen() {
+  document.getElementById("imagenModal").style.display = "none";
+}
 
-cerrar.addEventListener('click', () => {
-  modal.style.display = 'none';
-});
-
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) modal.style.display = 'none';
-});
+// Cerrar con click fuera de la imagen
+window.onclick = function(event) {
+  const modal = document.getElementById("imagenModal");
+  if (event.target === modal) modal.style.display = "none";
+}

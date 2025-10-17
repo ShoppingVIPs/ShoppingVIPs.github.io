@@ -1,163 +1,127 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
+/* Estilo general */
 body {
-  background-color: #fff;
-  color: #222;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #fff;
+  color: #333;
 }
 
 header {
-  background-color: #0d47a1;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  background-color: #007bff;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 header h1 {
-  color: white;
-  font-size: 1.3rem;
-}
-
-nav {
-  display: flex;
-  gap: 10px;
+  margin: 0;
+  font-size: 1.8em;
 }
 
 nav a {
   color: white;
+  margin: 0 10px;
   text-decoration: none;
-  font-size: 0.9rem;
-  padding: 5px 10px;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-
-nav a:hover {
-  background-color: white;
-  color: #0d47a1;
+  font-weight: 600;
 }
 
 .hero {
   text-align: center;
-  padding: 50px 20px 30px;
-  background: linear-gradient(180deg, #1976d2, #0d47a1);
-  color: white;
+  padding: 40px 20px;
+  background: linear-gradient(to bottom, #ffffff, #f0f6ff);
 }
 
 .hero h2 {
-  font-size: 1.8rem;
+  color: #007bff;
   margin-bottom: 10px;
 }
 
-.hero p {
-  color: #e0e0e0;
-  font-size: 1rem;
-}
-
 .productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-  gap: 25px;
   padding: 20px;
 }
 
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjeta del producto */
 .producto {
-  background-color: #fff;
-  border-radius: 10px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+  cursor: pointer;
 }
 
 .producto:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  transform: translateY(-5px);
 }
 
 .producto img {
   width: 100%;
-  height: 340px;
-  object-fit: contain;
-  background-color: #f5f5f5;
-  cursor: pointer;
+  height: 200px;
+  object-fit: cover; /* ✅ Ajusta la imagen sin deformarla */
+  display: block;
 }
 
 .producto-info {
-  padding: 12px;
+  padding: 10px;
   text-align: center;
 }
 
 .producto-info h3 {
-  color: #0d47a1;
-  font-size: 1rem;
-  margin-bottom: 6px;
+  margin: 5px 0;
+  color: #007bff;
+  font-size: 1.1em;
 }
 
 .producto-info p {
+  font-size: 0.9em;
   color: #555;
-  font-size: 0.85rem;
-  margin-bottom: 5px;
 }
 
 .producto-info span {
   font-weight: bold;
-  color: #0d47a1;
-  font-size: 0.95rem;
+  color: #333;
 }
 
+/* Footer */
 footer {
   text-align: center;
-  background-color: #0d47a1;
+  background-color: #f0f0f0;
   padding: 15px;
-  color: white;
-  font-size: 0.9rem;
-  margin-top: 30px;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+  font-size: 0.9em;
 }
 
-/* Botón flotante de WhatsApp */
+/* WhatsApp flotante */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #25D366;
+  background: #25D366;
   color: white;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 28px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-align: center;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  border-radius: 50%;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
   text-decoration: none;
-  transition: transform 0.3s;
-  z-index: 100;
 }
 
-.whatsapp-float:hover {
-  transform: scale(1.1);
-}
-
-/* Ventana modal de imagen ampliada */
+/* Modal de imagen ampliada */
 .modal {
   display: none;
   position: fixed;
-  z-index: 200;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.85);
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
 }
@@ -166,38 +130,24 @@ footer {
   max-width: 90%;
   max-height: 90%;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.3);
 }
 
 .cerrar {
   position: absolute;
   top: 20px;
-  right: 30px;
+  right: 35px;
   color: white;
-  font-size: 35px;
-  font-weight: bold;
+  font-size: 40px;
   cursor: pointer;
 }
 
-/* Adaptación móvil */
-@media (max-width: 480px) {
-  .hero h2 {
-    font-size: 1.4rem;
-  }
-
-  .productos {
-    grid-template-columns: 1fr;
+/* Responsive */
+@media (max-width: 600px) {
+  .grid-productos {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .producto img {
-    height: 300px;
-  }
-
-  header h1 {
-    font-size: 1rem;
-  }
-
-  nav a {
-    font-size: 0.8rem;
+    height: 160px;
   }
 }
