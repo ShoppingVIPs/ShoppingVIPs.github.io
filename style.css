@@ -74,7 +74,6 @@ nav a {
   transform: scale(1.05);
 }
 
-/* Texto “toca para ampliar” */
 .texto-ampliar {
   text-align: center;
   font-size: 0.85em;
@@ -121,7 +120,6 @@ footer {
   font-size: 0.9em;
 }
 
-/* WhatsApp flotante */
 .whatsapp-float {
   position: fixed;
   bottom: 20px;
@@ -166,7 +164,7 @@ footer {
   cursor: pointer;
 }
 
-/* Responsive */
+/* Respon */
 @media (max-width: 600px) {
   .grid-productos {
     grid-template-columns: repeat(1, 1fr);

@@ -24,6 +24,12 @@
   <section class="productos" id="productos">
     <div class="grid-productos">
       <script>
+        const precios = [
+          2000, 1200, 2000, 1800, 1000, 2000, 2000,
+          1200, 1200, 1500, 2000, 1000, 2000, 33.00,
+          1500, 2000, 2000, 900, 2000, 2000, 2000
+        ];
+
         for (let i = 1; i <= 21; i++) {
           const texto = /Mobi|Android|iPhone/i.test(navigator.userAgent) 
                         ? "📱 Toca para ampliar" 
@@ -34,7 +40,7 @@
               <div class="producto-info">
                 <h3>Producto ${i}</h3>
                 <p>Moda exclusiva ShoppingVIP</p>
-                <span>$${(Math.random() * 70 + 20).toFixed(2)}</span>
+                <span>$${precios[i-1].toFixed(2)}</span>
               </div>
               <div class="texto-ampliar">${texto}</div>
             </div>
@@ -45,7 +51,7 @@
   </section>
 
   <footer>
-    <p>© 2025 ShoppingVIP - Todos los derechos reservados</p>
+    <p>© 2025 ShoppingVIP - RandyGD - Todos los derechos reservados</p>
   </footer>
 
   <!-- Botón flotante de WhatsApp -->
